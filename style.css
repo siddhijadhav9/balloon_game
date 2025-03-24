@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #fff8dc;
+    font-family: Arial, sans-serif;
+    touch-action: manipulation;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#pump {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    z-index: 100;
+    background-color: #48d1cc;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pump-handle {
+    position: absolute;
+    top: -40px;
+    width: 80px;
+    height: 40px;
+    background-color: #4b0082;
+    border-radius: 20px;
+    transition: top 0.2s;
+}
+
+.cloud {
+    position: absolute;
+    background-color: white;
+    border: 2px solid #ffffe0;
+    border-radius: 50px;
+    width: 100px;
+    height: 50px;
+    opacity: 0.9;
+}
+
+.balloon {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: width 0.2s, height 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    border-radius: 50%;
+    border: 2px solid black;
+    user-select: none;
+}
+
+#score-display {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#start-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    font-size: 24px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.pop-effect {
+    position: absolute;
+    font-size: 50px;
+    font-weight: bold;
+    animation: pop 0.5s forwards;
+    z-index: 10;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes wobble {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+}
